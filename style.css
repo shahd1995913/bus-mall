@@ -1,0 +1,86 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    color: #4D4D55;
+  }
+  
+  /* HERO IMAGE */
+  .intro {
+    height: 100%;
+    width: 100%;
+    margin: auto 0;
+    background-color: antiquewhite;
+    display: table;
+    background-size: cover;
+  }
+  
+  .intro .inner {
+    display: table-cell;
+    padding-top: 40px;
+    width: 100%;
+    max-width: none;
+    text-align: center;
+  }
+  /* END HERO IMAGE */
+  
+  h1 {
+    font-family: 'Faster One', cursive;
+    font-size: 8.5em;
+    text-shadow: 1px 1px #8A7871;
+    text-align: center;
+  }
+  
+  p {
+    font-family: 'Montserrat Alternates', sans-serif;
+    text-align: center;
+    font-size: 1.5em;
+  }
+  
+  #allProducts {
+    text-align: center;
+    margin: 50px 0;
+  }
+  
+  #allProducts img {
+    height: 18%;
+    width: 18%;
+    border: 15px solid #4D4D55;
+    border-radius: 5%;
+    margin: 5px;
+    align-content: center;
+  }
+  
+  /* BUTTONS */
+  .btn {
+    background: #4D4D55;
+    border-radius: 9px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: rgb(175, 206, 198);
+    font-size: 200%;
+    padding: 10px 20px;
+    border: solid #E2E6E5 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0 20px;
+  }
+  
+  .btn:hover {
+    color:#4D4D55;
+    background-color:#E2E6E5;
+    border-color:#4D4D55;
+  }
+  
+  /* STATS */
+  #stats {
+    margin: 60px;
+  }
+  
+  li {
+    font-family: 'Montserrat Alternates', sans-serif;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 20px;
+  }
+  
