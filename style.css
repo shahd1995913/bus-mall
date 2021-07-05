@@ -83,4 +83,8 @@ html, body {
     margin: 10px 0;
     font-size: 20px;
   }
-  
+  /* CHART */
+#chartContainer {
+  text-align: center;
+  margin: auto;
+}
