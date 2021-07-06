@@ -46,7 +46,44 @@ function Product(name, src) {
   this.clicks = 0;
   this.timesShown = 0;
   Product.allProducts.push(this);
+
+
+
+
 }
+
+
+function save()
+{
+
+
+let data1=JSON.stringify(Product.allProducts);
+localStorage.setItem('Busdata',data1);
+
+
+}
+
+
+
+
+function callData()
+{
+
+let loadData2 =localStorage.getItem('Busdata');
+if(loadData2){
+
+
+let loadData3 = JSON.parse(loadData2);
+Product.allProducts = loadData3;
+
+
+
+}
+
+
+}
+
+callData()
 
 function instantiateProducts () {
   for(var i = 0; i < allProductNames.length; i++) {
@@ -169,14 +206,17 @@ function renderStats() {
 
 
 
-function checkStorage () {
-  if(localStorage.setProducts) {
-    var stringifyProducts = localStorage.getItem('setProducts');
-    Product.allProducts = JSON.parse(stringifyProducts);
-  } else {
-    instantiateProducts();
-  }
-}
+// function checkStorage () {
+//   if(localStorage.setProducts) {
+//     var stringifyProducts = localStorage.getItem('setProducts');
+//     Product.allProducts = JSON.parse(stringifyProducts);
+//   } else {
+   
+//   }
+// }
+
+
+instantiateProducts();
 
 var handleClick = function(event) {
   if (event.target === productContainer) {
@@ -184,14 +224,13 @@ var handleClick = function(event) {
   }
   totalClicks++;
   var clickedProduct = event.target;
-  var id = clickedProduct.id;
-  if (id === 'left') {
+  if (clickedProduct.id === 'left') {
     leftProduct.clicks++;
   }
-  if (id === 'center') {
+  if (clickedProduct.id === 'center') {
     middleProduct.clicks++;
   }
-  if (id === 'right') {
+  if (clickedProduct.id === 'right') {
     rightProduct.clicks++;
   }
 
@@ -202,9 +241,10 @@ var handleClick = function(event) {
     localStorage.setItem('setProducts', JSON.stringify(Product.allProducts));
   }
   displayProducts();
+ save();
 };
 
-checkStorage();
+//checkStorage();
 displayProducts();
 
 productContainer.addEventListener('click', handleClick);
