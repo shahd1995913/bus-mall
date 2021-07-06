@@ -44,12 +44,9 @@ function Product(name, src) {
   this.name = name;
   this.src = src;
   this.clicks = 0;
+ 
   this.timesShown = 0;
   Product.allProducts.push(this);
-
-
-
-
 }
 
 
@@ -109,7 +106,9 @@ function displayProducts() {
   }
 
   leftImgTag.src = Product.allProducts[Product.checkDupes[0]].src;
-  Product.allProducts[Product.checkDupes[0]].timesShown++;
+
+   Product.allProducts[Product.checkDupes[0]].timesShown++;
+
   leftProduct = Product.allProducts[Product.checkDupes[0]];
 
   middleImgTag.src = Product.allProducts[Product.checkDupes[1]].src;
@@ -199,7 +198,7 @@ function renderStats() {
 
   for (var i = 0; i < Product.allProducts.length; i++) {
     var liEl = document.createElement('li');
-    liEl.textContent = Product.allProducts[i].clicks + ' votes for ' + Product.allProducts[i].name;
+    liEl.textContent = Product.allProducts[i].clicks + ' votes for ' + Product.allProducts[i].name + " ------ " +  'Number of Shown image' + Product.allProducts[i].timesShown; 
     stats.appendChild(liEl);
   }
 }
